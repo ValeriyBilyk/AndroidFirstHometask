@@ -9,8 +9,54 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
+
     <TextView
+        android:id="@+id/text_view_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="46dp"
+        android:text="Input text:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/edit_text_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/text_view_input" />
+
+
+    <Button
+        android:id="@+id/button_output"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/edit_text_input"
+        android:layout_centerHorizontal="true"
+        android:text="Output" />
+
+    <TextView
+        android:id="@+id/text_view_output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/text_view_input"
+        android:layout_alignStart="@+id/text_view_input"
+        android:layout_below="@+id/button_output"
+        android:layout_marginTop="25dp"
+        android:text="Output text:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/edit_text_output"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/text_view_output" />
+
 </RelativeLayout>

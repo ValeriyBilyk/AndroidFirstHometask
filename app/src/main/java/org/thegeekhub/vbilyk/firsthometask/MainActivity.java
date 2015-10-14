@@ -1,30 +1,32 @@
 package org.thegeekhub.vbilyk.firsthometask;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button buttonOutput = (Button) findViewById(R.id.button_output);
-        buttonOutput.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText editTextInput = (EditText) findViewById(R.id.edit_text_input);
-                String textInput = editTextInput.getText().toString();
-
-                EditText editTextOutput = (EditText) findViewById(R.id.edit_text_output);
-                editTextOutput.setText(textInput);
-            }
-        });
+        findViewById(R.id.btn_first_activity).setOnClickListener(this);
+        findViewById(R.id.btn_second_activity).setOnClickListener(this);
     }
 
-
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_first_activity:
+                Intent firstActivity = new Intent(this, FirstActivity.class);
+                startActivity(firstActivity);
+                break;
+            case R.id.btn_second_activity:
+                Intent secondActivity = new Intent(this, SecondActivity.class);
+                startActivity(secondActivity);
+                break;
+        }
+    }
 }

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/edit_enter_value"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btn_fibonacci"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/btn_fibonacci"
+        android:layout_marginTop="23dp"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btn_factorial"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/edit_enter_value"
+        android:layout_marginLeft="34dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="32dp"
+        android:text="Factorial" />
+
+    <Button
+        android:id="@+id/btn_fibonacci"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_alignTop="@+id/btn_factorial"
+        android:layout_marginLeft="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_toEndOf="@+id/btn_factorial"
+        android:layout_toRightOf="@+id/btn_factorial"
+        android:text="Fibonacci" />
+
+    <TextView
+        android:id="@+id/txt_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_factorial"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:text="Result:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/edit_result"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_result"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/txt_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/edit_enter_value"
+        android:layout_alignBottom="@+id/edit_enter_value"
+        android:layout_alignEnd="@+id/btn_factorial"
+        android:layout_alignRight="@+id/btn_factorial"
+        android:text="Enter value:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+</RelativeLayout>

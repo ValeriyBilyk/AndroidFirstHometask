@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         findViewById(R.id.btn_first_activity).setOnClickListener(this);
         findViewById(R.id.btn_second_activity).setOnClickListener(this);
+        findViewById(R.id.btn_third_activity).setOnClickListener(this);
     }
 
     @Override
@@ -27,6 +28,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent secondActivity = new Intent(this, SecondActivity.class);
                 startActivity(secondActivity);
                 break;
+            case R.id.btn_third_activity:
+                Intent thirdActivity = new Intent(this, ThirdActivity.class);
+                startActivity(thirdActivity);
         }
     }
 }

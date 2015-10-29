@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import org.thegeekhub.vbilyk.firsthometask.fourthhometask.FourthActivity;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
@@ -15,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_first_activity).setOnClickListener(this);
         findViewById(R.id.btn_second_activity).setOnClickListener(this);
         findViewById(R.id.btn_third_activity).setOnClickListener(this);
+        findViewById(R.id.btn_fourth_activity).setOnClickListener(this);
     }
 
     @Override
@@ -31,6 +34,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_third_activity:
                 Intent thirdActivity = new Intent(this, ThirdActivity.class);
                 startActivity(thirdActivity);
+                break;
+            case R.id.btn_fourth_activity:
+                Intent fourthActivity = new Intent(this, FourthActivity.class);
+                startActivity(fourthActivity);
         }
     }
 }

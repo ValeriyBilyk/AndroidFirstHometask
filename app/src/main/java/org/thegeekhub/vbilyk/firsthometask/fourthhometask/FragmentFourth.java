@@ -1,8 +1,8 @@
 package org.thegeekhub.vbilyk.firsthometask.fourthhometask;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import org.thegeekhub.vbilyk.firsthometask.R;
 
-public class FirstFragment extends Fragment implements MyInterface, View.OnClickListener {
+public class FragmentFourth extends Fragment implements MyInterface, View.OnClickListener {
 
     private TextView textFragment;
     private Button btnNext;
@@ -26,6 +26,7 @@ public class FirstFragment extends Fragment implements MyInterface, View.OnClick
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        getActivity().setTitle("Home task 4");
 
         textFragment = (TextView) view.findViewById(R.id.txt_fragment);
         btnNext = (Button) view.findViewById(R.id.btn_next);

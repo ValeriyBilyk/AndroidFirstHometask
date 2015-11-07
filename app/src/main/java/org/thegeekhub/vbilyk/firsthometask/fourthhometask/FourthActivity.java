@@ -10,7 +10,7 @@ public class FourthActivity extends BaseActivity {
 
     @Override
     public void addFragment() {
-        getFragmentManager().beginTransaction().add(R.id.container_activity_fourth, new FirstFragment()).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.container_activity_fourth, new FragmentFourth()).commit();
     }
 
     @Override

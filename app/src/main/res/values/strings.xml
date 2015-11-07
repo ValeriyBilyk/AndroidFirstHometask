@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">AndroidFirstHometask</string>
+    <string name="app_name">Android Hometask</string>
+    <string name="open">Drawer open</string>
+    <string name="close">Drawer closed</string>
 </resources>

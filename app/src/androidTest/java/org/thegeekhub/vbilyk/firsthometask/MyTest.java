@@ -2,6 +2,8 @@ package org.thegeekhub.vbilyk.firsthometask;
 
 import junit.framework.TestCase;
 
+import org.thegeekhub.vbilyk.firsthometask.activities.SecondActivity;
+
 public class MyTest extends TestCase {
 
     public void testFactorial() throws Exception {

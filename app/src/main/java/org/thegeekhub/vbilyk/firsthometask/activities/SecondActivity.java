@@ -1,9 +1,11 @@
-package org.thegeekhub.vbilyk.firsthometask;
+package org.thegeekhub.vbilyk.firsthometask.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+
+import org.thegeekhub.vbilyk.firsthometask.R;
 
 public class SecondActivity extends AppCompatActivity implements View.OnClickListener {
 

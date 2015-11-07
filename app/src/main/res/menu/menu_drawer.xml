@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_home_task_1"
+        android:icon="@android:drawable/star_big_off"
+        android:title="Home task 1" />
+    <item
+        android:id="@+id/action_home_task_2"
+        android:icon="@android:drawable/star_big_off"
+        android:title="Home task 2" />
+    <item
+        android:id="@+id/action_home_task_3"
+        android:icon="@android:drawable/star_big_off"
+        android:title="Home task 3" />
+    <item
+        android:id="@+id/action_home_task_4"
+        android:icon="@android:drawable/star_big_off"
+        android:title="Home task 4" />
+    <item
+        android:id="@+id/action_home_task_5"
+        android:icon="@android:drawable/star_big_off"
+        android:title="Home task 5" />
+</menu>

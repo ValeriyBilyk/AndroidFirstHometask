@@ -13,7 +13,7 @@ public class FirstActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first);
+        setContentView(R.layout.fragment_first);
 
         Button buttonOutput = (Button) findViewById(R.id.button_output);
         buttonOutput.setOnClickListener(new View.OnClickListener() {

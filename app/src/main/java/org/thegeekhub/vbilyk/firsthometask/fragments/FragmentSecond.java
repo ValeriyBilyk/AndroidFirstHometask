@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.thegeekhub.vbilyk.firsthometask.R;
 
@@ -32,7 +33,7 @@ public class FragmentSecond extends Fragment implements View.OnClickListener {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_second, container, false);
+        return inflater.inflate(R.layout.fragment_second, container, false);
     }
 
     @Override
@@ -50,12 +51,20 @@ public class FragmentSecond extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_factorial:
-                int fact = Integer.parseInt(editValue.getText().toString());
-                editResult.setText(String.valueOf(factorial(fact)));
+                try {
+                    int fact = Integer.parseInt(editValue.getText().toString());
+                    editResult.setText(String.valueOf(factorial(fact)));
+                } catch (NumberFormatException e) {
+                    Toast.makeText(getActivity(), "Enter correct value", Toast.LENGTH_SHORT).show();
+                }
                 break;
             case R.id.btn_fibonacci:
-                int fib = Integer.parseInt(editValue.getText().toString());
-                editResult.setText(String.valueOf(fibonacci(fib)));
+                try {
+                    int fib = Integer.parseInt(editValue.getText().toString());
+                    editResult.setText(String.valueOf(fibonacci(fib)));
+                } catch (NumberFormatException e) {
+                    Toast.makeText(getActivity(),"Enter correct value", Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
     }

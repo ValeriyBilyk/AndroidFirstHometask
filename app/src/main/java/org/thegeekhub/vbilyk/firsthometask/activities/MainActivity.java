@@ -28,16 +28,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ActionBarDrawerToggle drawerToggle;
     private int navItemId;
     private NavigationView navigationView;
+    private boolean landTablet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
         // load saved navigation state if present
         if (null == savedInstanceState) {
@@ -46,20 +45,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             navItemId = savedInstanceState.getInt(NAV_ITEM_ID);
         }
 
+        landTablet = findViewById(R.id.drawer_layout) == null;
+        if (!landTablet) {
+            initDrawer(toolbar);
+        }
+
+        initNavigationView();
+
+        navigate(navItemId);
+    }
+
+    private void initNavigationView() {
         // listen for navigation events
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         // select the correct nav menu item
         navigationView.getMenu().findItem(navItemId).setChecked(true);
+    }
+
+    private void initDrawer(Toolbar toolbar) {
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         // set up the hamburger icon to open and close the drawer
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
         drawerLayout.setDrawerListener(drawerToggle);
         drawerToggle.syncState();
-
-        navigate(navItemId);
-
     }
 
     private void replaceFragment(Fragment fragment) {
@@ -97,13 +108,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         // allow some time after closing the drawer before performing real navigation
         // so the user can see what is happening
-        drawerLayout.closeDrawer(GravityCompat.START);
         drawerActionHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 navigate(menuItem.getItemId());
             }
         }, DRAWER_CLOSE_DELAY_MS);
+        if (!landTablet) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
         return true;
     }
 
@@ -135,4 +148,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onSaveInstanceState(outState);
         outState.putInt(NAV_ITEM_ID, navItemId);
     }
+
+
 }

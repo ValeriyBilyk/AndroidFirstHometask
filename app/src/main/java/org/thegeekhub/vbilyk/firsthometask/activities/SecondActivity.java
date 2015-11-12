@@ -29,7 +29,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
+        setContentView(R.layout.fragment_second);
 
         findViewById(R.id.btn_factorial).setOnClickListener(this);
         findViewById(R.id.btn_fibonacci).setOnClickListener(this);

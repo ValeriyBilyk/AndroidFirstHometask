@@ -15,6 +15,6 @@ public class FourthActivity extends BaseActivity {
 
     @Override
     protected int getContainer() {
-        return R.layout.activity_fourth;
+        return R.layout.fragment_fourth;
     }
 }
